@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exit Tickets in Law Teaching</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  /* Layout: one reading column; the resource table scrolls sideways on narrow screens. */
+  :root {
+    --bg: #f6f7f5; --surface: #ffffff; --fg: #1d2630; --muted: #5a6670; --rule: #cfd6d3;
+    --accent: #2b5d6b; --accent-soft: #e4eef0; --code-bg: #f0f3f2;
+    --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --body: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141a1f; --surface: #1c242b; --fg: #e6eaec; --muted: #a2adb5; --rule: #34414a;
+      --accent: #7fb6c4; --accent-soft: #223038; --code-bg: #1a2228; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141a1f; --surface: #1c242b; --fg: #e6eaec; --muted: #a2adb5; --rule: #34414a;
+    --accent: #7fb6c4; --accent-soft: #223038; --code-bg: #1a2228; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 1.0625rem; line-height: 1.55; padding-inline: 16px; padding-block: 2.5rem 4rem; }
+  .page { max-width: 52rem; margin: 0 auto; }
+  h1, h2, h3, h4 { font-family: var(--display); text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.15; margin-bottom: 0.5rem; }
+  h2 { font-size: 1.45rem; font-weight: 600; line-height: 1.25; margin-block: 2.5rem 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+  h3 { font-size: 1.15rem; font-weight: 600; margin-block: 1.75rem 0.4rem; }
+  h4 { font-family: var(--body); font-size: 1rem; font-weight: 700; margin-block: 1.25rem 0.35rem; }
+  .eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 0.6rem; }
+  .lede { color: var(--muted); font-size: 1.1rem; }
+  .part { margin: 3.5rem 0 0; padding-top: 1.25rem; border-top: 3px solid var(--accent); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .part + h2 { border-top: 0; margin-top: 0.3rem; padding-top: 0; font-size: 1.75rem; }
+  p { margin: 0 0 0.85rem; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  ul, ol { padding-left: 1.3rem; margin: 0 0 1rem; }
+  li { margin-bottom: 0.4rem; }
+  pre { background: var(--code-bg); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0.6rem 0 1rem; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; font-size: 0.9rem; line-height: 1.5; }
+  code { font-family: ui-monospace, "Cascadia Mono", Consolas, Menlo, monospace; font-size: 0.92em; }
+  blockquote { margin: 0.6rem 0 1rem; padding: 0.4rem 0 0.4rem 1rem; border-left: 3px solid var(--rule); color: var(--muted); font-style: italic; }
+  blockquote p { margin: 0; }
+  .callout { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 0.75rem 1rem; margin: 0.75rem 0 1.25rem; }
+  .callout p { margin: 0; }
+  .table-wrap { overflow-x: auto; margin: 0.75rem 0 1.25rem; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 0.93rem; line-height: 1.45; }
+  .wide table { min-width: 860px; font-size: 0.92rem; }
+  th, td { text-align: left; vertical-align: top; padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--rule); }
+  th { font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--accent-soft); }
+  tbody tr:last-child td { border-bottom: 0; }
+  .wide td:first-child { min-width: 12rem; color: var(--muted); font-size: 0.86rem; }
+  .wide td:first-child a { display: inline-block; font-family: var(--display); font-size: 1rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .wide td:nth-child(2) { min-width: 22rem; }
+  .foot { margin-top: 2.5rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.88rem; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="page">
+<h1>Exit Tickets in Law Teaching</h1>
+<p class="eyebrow">Faculty show-and-tell · instructional workflow</p>
+<p class="lede">Why brief, ungraded end-of-class cards are worth three minutes a week, and a Tuesday routine for reading them.</p>
+<h2>Selected resources from university teaching centers</h2>
+<p>Seven publicly available guides written for college, university, and professional-school instructors. Each link was checked on October 4, 2026.</p>
+<div class="table-wrap wide"><table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Annotation</th>
+<th>Most worthwhile feature</th>
+<th>Best use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://sheridan.brown.edu/resources/course-design/feedback-student-learning/entrance-and-exit-tickets">Entrance and Exit Tickets</a><br>Sheridan Center for Teaching and Learning, Brown University. Sample exit-ticket guidance credited to Larry Wakeford (Education).</td>
+<td>Defines exit tickets as one-to-two-minute end-of-class responses that collect feedback on understanding and prompt students to reflect on and synthesize what they learned, with no formal grading. Sample prompts ask students to name something learned, identify puzzling content, and suggest improvements; results inform pacing and quick clarification of small misunderstandings. The index-card format transfers directly to doctrinal sections, legal-writing classes, and clinic seminars.</td>
+<td><strong>Sample prompts tied to pacing and clarification decisions</strong></td>
+<td>Best for: first-time adopters needing starter prompts</td>
+</tr>
+<tr>
+<td><a href="https://www.cmu.edu/teaching/assessment/assesslearning/CATs.html">Using Classroom Assessment Techniques</a><br>Eberly Center for Teaching Excellence and Educational Innovation, Carnegie Mellon University</td>
+<td>Explains that classroom assessment techniques such as the minute paper and muddiest point provide immediate feedback on the whole class's understanding rather than individual performance, so the instructor can adjust pace or revisit confusing material. Recommends telling students what the responses showed so they recognize their own difficulties and see how feedback shapes teaching. Useful framing for doctrinal professors who worry that cards become an evaluation of individual students.</td>
+<td><strong>Clear advice on reporting results back to the class</strong></td>
+<td>Best for: understanding the whole-class diagnostic purpose</td>
+</tr>
+<tr>
+<td><a href="https://poorvucenter.yale.edu/teaching/teaching-resource-library/the-beginning-and-end-of-class">The Beginning and End of Class</a><br>Poorvu Center for Teaching and Learning, Yale University</td>
+<td>Recommends four closing moves: review objectives, have students summarize (including one-minute papers), collect &quot;muddiest points&quot; on note cards to address in later sessions, and preview what comes next. The rationale is that structured closings help students synthesize and connect concepts, which supports conceptual learning and transfer. Transfer is the core aim in law school, where a rule learned Tuesday must be applied to a new fact pattern or client Thursday.</td>
+<td><strong>Frames exit cards as part of a structured class closing</strong></td>
+<td>Best for: redesigning the last five minutes of class</td>
+</tr>
+<tr>
+<td><a href="https://blogs.iu.edu/citl/2024/08/26/quick-tip-get-feedback-from-your-students-via-the-muddiest-point-cat/">Quick Tip: Get Feedback From Your Students Via the &quot;Muddiest Point&quot; CAT</a><br>Center for Innovative Teaching and Learning, Indiana University Bloomington. Author: Lisa Kurz (August 26, 2024).</td>
+<td>Describes asking students at the end of class what was least clear, collected on 3x5 cards or an online survey, then sorting responses into thematic categories to decide which topics deserve more class time or a follow-up message. Notes the sorting is quick because responses are a few words or phrases, and the technique adapts to readings, guest lectures, and assignments. The sorting step is the one an OCR-assisted workflow accelerates, and the guest-lecture adaptation suits clinic rounds and practitioner visits.</td>
+<td><strong>Practical method for sorting responses into themes</strong></td>
+<td>Best for: processing a stack of cards efficiently</td>
+</tr>
+<tr>
+<td><a href="https://mtei.engineering.cornell.edu/tips-updates/muddiest-point-and-one-minute-papers-for-active-learning-and-feedback/">Muddiest Point and One-Minute Papers for Active Learning and Feedback</a><br>McCormick Teaching Excellence Institute, Cornell University (College of Engineering)</td>
+<td>Argues that naming the most confusing concept makes students more aware of their own learning process, and that summarizing key takeaways aids retention while giving instructors immediate, low-stakes feedback. Recommends addressing recurring themes in the next class or an online forum and, in large classes, reviewing about twenty papers sampled from across the stack to find patterns. Directly applicable to large first-year doctrinal sections where reading every card is impractical.</td>
+<td><strong>Explicit metacognition rationale plus large-class sampling tip</strong></td>
+<td>Best for: large doctrinal sections</td>
+</tr>
+<tr>
+<td><a href="https://resources.depaul.edu/teaching-commons/teaching-guides/feedback-grading/Pages/exit-tickets-midterm-surveys.aspx">Exit Tickets and Midterm Surveys</a><br>Teaching Commons, DePaul University</td>
+<td>Lists four purposes for exit tickets: check understanding, collect feedback on the session, have students apply and document learning, and identify starting points for the next class. Offers prompts in three categories (feedback on instruction, learning assessment, student self-analysis), advises keeping tickets to one to three questions, and covers collection through polls, learning-management-system tools, and shared documents. The &quot;apply and document learning&quot; purpose maps onto practice-oriented courses where the card can pose a short client or drafting scenario.</td>
+<td><strong>Prompt bank organized by purpose</strong></td>
+<td>Best for: choosing prompts by goal; online or hybrid sections</td>
+</tr>
+<tr>
+<td><a href="https://teaching.unl.edu/resources/interactive-lecture/muddiest-point/">Muddiest Point</a><br>Center for Transformative Teaching, University of Nebraska–Lincoln</td>
+<td>Describes the prompt &quot;What aspect of the lecture material is still unclear or confusing?&quot; and using responses to guide review and adjust later instruction. Covers delivery formats (index cards, anonymous Canvas surveys, clickers for large classes), a multiple-choice variant for rapid tallying, and advises using the technique weekly rather than every class so student feedback keeps its value. Supports a once-a-week cadence, which fits a Tuesday card routine and protects class time in credit-constrained courses.</td>
+<td><strong>Advice on frequency and delivery formats</strong></td>
+<td>Best for: deciding cadence and collection format</td>
+</tr>
+</tbody>
+</table></div>
+<h2>An example workflow</h2>
+<ol>
+<li><strong>Last three minutes of class.</strong> Students answer two to four short prompts on an index card. <strong>Names are not required</strong>.</li>
+<li><strong>Same day.</strong> The instructor photographs the cards in batches or scans them (see recipe below).</li>
+<li><strong>Draft transcription.</strong> An AI tool with OCR or vision capability returns a draft transcript and a first-pass grouping of themes. Misread handwriting and garbled legal terms are common.</li>
+<li><strong>Instructor review.</strong> The instructor reads the cards and the output side by side, corrects errors, tallies recurring questions and misconceptions, and chooses one or two items to revisit.</li>
+<li><strong>Next meeting.</strong> Five minutes at the start: name the themes, answer one representative question, and say when anything else will be addressed.</li>
+</ol>
+<p class="part">Part two · the recipe</p>
+<h2>Exit-ticket recipe: from index cards to next-class response</h2>
+<p>A step-by-step routine for reading a stack of handwritten end-of-class cards with help from an AI tool, written for a colleague who has not done this before.</p>
+<p><strong>What you need</strong></p>
+<ul>
+<li>Index cards, one per student</li>
+<li>A phone or office scanner that can produce a single PDF</li>
+<li>An AI tool your institution allows that reads uploaded PDFs or images (Glean, Copilot, ChatGPT, Claude, and Gemini all can)</li>
+<li>Your syllabus and course calendar as files you can upload</li>
+<li>Thirty to sixty minutes the first time; less once the prompts are saved</li>
+</ul>
+<p><strong>Ground rules</strong></p>
+<ul>
+<li><strong>No names on the cards</strong>. A section mark is enough if you teach more than one.</li>
+<li>Use the institutionally provided tool when one exists, and check its data-handling terms before uploading.</li>
+<li>Everything the tool produces is a draft. Read it against the original cards before any of it reaches students.</li>
+<li>Do not grade the cards for correctness.</li>
+</ul>
+<h3>Step 1. Write the prompts before class</h3>
+<p>Three questions fit on one card. Keep each answerable in a sentence. The first-day set used in LAW 5622:</p>
+<pre><code>1. What is one thing you want from this course?
+2. What is one worry you have about it?
+3. What is one technology you swear by, and did you choose it yourself?
+</code></pre>
+<p>For a regular week, ask two or three short questions about that day's class: what students would tell a classmate who missed it, what is still unclear, and how they would use it with a client. Put the questions on the board or a slide so students do not have to copy them. Tell students not to write their names.</p>
+<h3>Step 2. Collect and scan</h3>
+<ol>
+<li>Students write for the last two to three minutes of class. Collect the cards as they leave.</li>
+<li>The same day, scan the stack into <strong>one PDF, one card per page</strong>. A phone scanning app is fastest; the office copier's document feeder also works if the cards are stiff enough.</li>
+<li>Name the file with the date and course so the AI can pull both into its output. Example: <code>2026-07-18 LAW 5622 Exit Ticket.pdf</code>.</li>
+<li>Save the PDF where you can find it again. Do not rely on the AI tool to keep a copy.</li>
+</ol>
+<h4>Scanning cards with your phone</h4>
+<p>Any of these produces a single multi-page PDF. Lay the cards one at a time on a dark, plain surface so the app finds the edges, and work in good light.</p>
+<p><strong>Android: Google Drive app</strong> (the method used in the August run)</p>
+<ol>
+<li>Open Google Drive and tap the <strong>+</strong> button, then <strong>Scan</strong>.</li>
+<li>Point the camera at the first card. The app outlines the card and captures it; adjust the corners if needed.</li>
+<li>Tap <strong>Add</strong> (the + icon) to scan the next card. Repeat for the whole stack.</li>
+<li>Tap <strong>Done</strong>, type the filename, choose a folder, and tap <strong>Save</strong>. The PDF lands in Drive; download it from there.</li>
+</ol>
+<p><strong>iPhone or iPad: Google Drive app.</strong> Same steps as Android. The Drive app on iOS has had the scanner since late 2023, so one set of instructions covers both platforms if your colleagues already use Drive.</p>
+<p><strong>iPhone or iPad: Files app</strong> (built in, no account needed)</p>
+<ol>
+<li>Open Files, go to the folder you want, tap the <strong>More</strong> (⋯) button, then <strong>Scan Documents</strong>.</li>
+<li>Capture each card. The camera captures automatically when it sees the edges, or tap the shutter. Tap <strong>Keep Scan</strong> after each.</li>
+<li>When the stack is done, tap <strong>Save</strong>. Files writes a single multi-page PDF to the folder you chose; rename it there.</li>
+</ol>
+<p>The Notes app has the same scanner (Attachment button, then Scan Documents), but exporting a note as a PDF includes only the first page of a multi-page scan. Share the scan attachment itself, or use Files, to keep every page.</p>
+<p><strong>Either platform: Adobe Scan (Creative Cloud).</strong> Adobe Scan is Adobe's free scanning app for iPhone and Android. It converts images to PDF and saves them to Adobe Document Cloud, from which you can share or download the file. Sign in with your institutional Adobe account if your campus provides Creative Cloud; a free Adobe ID also works. Scan the cards one after another in a single session, review and reorder pages, then save. Acrobat's own mobile app includes the same scanner. LSU faculty and staff have Creative Cloud, including Acrobat Pro, through the university, but LSU recommends keeping files in OneDrive or Box rather than Adobe's cloud. Download the PDF and save it there.</p>
+<div class="callout"><p><strong>Whichever app you use.</strong> Open the PDF before uploading it and confirm the page count matches the number of cards.</p></div>
+<h3>Step 3. Ask for a transcript, not an analysis</h3>
+<p>Upload the PDF and paste the questions into the prompt. Keep transcription separate from interpretation so you have a clean record to check first. Prompt, generalized from the August run:</p>
+<pre><code>I'm providing a PDF of scanned handwritten exit tickets from my students, written in response to the questions below. As a first step, run OCR on this scan and transcribe the answers into a markdown file. Put the date and course number at the top, list the questions, then give each ticket its own numbered section with all of its answers together. Correct only obvious spelling and punctuation; do not change the students' meaning. Where handwriting is genuinely unreadable, write [illegible] rather than guessing. When you finish, confirm that every ticket has an answer for every question. I will do analysis in a later step.
+
+[paste the questions here]
+</code></pre>
+<p>What to expect: a numbered list, one section per card, with the questions repeated at the top. Some tools show this in a side panel or &quot;artifact&quot;; others paste it in the chat. Either is fine.</p>
+<h3>Step 4. Check the transcript against the cards</h3>
+<p>The tool's first pass will miss or flatten things. In the August run, &quot;Outlook rules&quot; came through as &quot;Outlook&quot; and &quot;packet due dates&quot; was dropped entirely. The embedded OCR layer in the PDF captured only part of the packet.</p>
+<ol>
+<li>
+<p>Ask the tool to re-read the images, not the OCR text:</p>
+<pre><code>Your first pass may have missed small words or normalized spelling. Re-read each page as an image and compare it to your transcript. List every change you make, with the ticket number.
+</code></pre>
+</li>
+<li>
+<p>Open the PDF beside the transcript and read every card yourself. For a large section, read at least every third card and every card the tool flagged.</p>
+</li>
+<li>
+<p>Fix anything the tool missed. You are the final reader.</p>
+</li>
+<li>
+<p>Download the corrected transcript as a markdown or text file and save it next to the PDF. In the August run the tool saved its work to an internal location the instructor could not see; it took a second request to get a visible copy. Download before moving on.</p>
+</li>
+</ol>
+<h3>Step 5. Ask for a brainstorm, with your course documents attached</h3>
+<p>Upload the syllabus, course calendar, and any communication plan alongside the corrected transcript. Asking for a brainstorm before a &quot;formal analysis&quot; keeps the output at the level of groupings and options rather than invented statistics. Prompt, generalized from the August run:</p>
+<pre><code>Help me analyze these exit tickets based on your reading of my syllabus, course calendar, and communication plan. What are some ways I might use these sentiments in the upcoming class, including adjustments to the course? I'm especially interested in ways to reflect the responses back to students so they can see their own concerns grouped and analyzed. This is a brainstorm, not a formal analysis yet. Tell me how to use this in my next class.
+</code></pre>
+<p>What to expect: preliminary clusters for each question, a proposed opening for the next class, and a list of possible course adjustments from small to large. In the August run the clusters were wants (practical competence, efficiency, Microsoft 365 and Excel, AI and automation, small-firm readiness), worries (weak technical foundations, getting lost in demonstrations, Excel, overload, deadlines, AI ethics), and trusted tools.</p>
+<h3>Step 6. Read the output as a draft and pick two or three moves</h3>
+<p>Three tests before you use anything:</p>
+<ul>
+<li>Does the grouping match what you remember from the room?</li>
+<li>Does the tool's reading of your syllabus match the actual document? Check any sentence that says &quot;your syllabus already does X.&quot;</li>
+<li>Did it flag anything you need to fix regardless of the tickets? The August run caught a mismatch between the syllabus and the course calendar for the first module's contents.</li>
+</ul>
+<p>Choose two or three moves for the next class. Leave the rest for later. The tool drafts; you decide.</p>
+<h3>Step 7. Close the loop at the next meeting</h3>
+<p>Five to seven minutes at the start of class.</p>
+<p><strong>1. One slide, titled &quot;What I heard last class.&quot;</strong> One column per question. List the clusters, not counts. Label them preliminary.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>You want</th>
+<th>You worry about</th>
+<th>Tools you already trust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Practical skills</td>
+<td>Falling behind</td>
+<td>Google Workspace</td>
+</tr>
+<tr>
+<td>Efficiency and organization</td>
+<td>Excel</td>
+<td>Outlook and calendars</td>
+</tr>
+<tr>
+<td>Microsoft 365 proficiency</td>
+<td>Weak technical foundations</td>
+<td>AI assistants</td>
+</tr>
+<tr>
+<td>AI and automation</td>
+<td>AI ethics and reliability</td>
+<td>Phones and note-taking tools</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>2. A short spoken response</strong> that names the pattern and connects it to something already in the course design. From the August run:</p>
+<blockquote>
+<p>You are coming into this course with different starting points, but many of you want the same destination. Several of you are worried about falling behind. That is useful for me to know, because Thursday sessions are specifically intended to put the difficult setup work in the classroom, where I can help.</p>
+</blockquote>
+<p><strong>3. One question back to the class.</strong> &quot;Which cluster feels most important? What did I group incorrectly or leave out?&quot; Collect answers by show of hands, sticky notes, or a quick poll.</p>
+<p><strong>4. Say what you changed, if anything.</strong> Even a small adjustment, named aloud, shows the cards had an effect.</p>
+<h3>Step 8. Keep the record</h3>
+<p>Save three files in a folder you control: the scanned PDF, the corrected transcript, and the chat itself as markdown or text. Most tools have an export or copy option; if not, ask the tool to produce the whole thread as a markdown file.</p>
+<p>The files let you repeat the analysis later, compare across weeks, or re-run the first-day questions at midterm and end of term to show students what changed. A more formal analysis with theme counts and representative quotations is only possible if the transcripts exist.</p>
+<h3>One-page summary</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>What you do</th>
+<th>What the AI does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Prompts</td>
+<td>Write three or four short questions</td>
+<td>Nothing</td>
+</tr>
+<tr>
+<td>2. Scan</td>
+<td>Collect cards, scan to one PDF, name it with date and course</td>
+<td>Nothing</td>
+</tr>
+<tr>
+<td>3. Transcribe</td>
+<td>Upload PDF and questions, ask for a numbered transcript</td>
+<td>Reads handwriting, produces draft transcript</td>
+</tr>
+<tr>
+<td>4. Verify</td>
+<td>Read every card against the transcript, fix errors, download</td>
+<td>Re-reads page images on request, lists changes</td>
+</tr>
+<tr>
+<td>5. Brainstorm</td>
+<td>Upload syllabus and calendar, ask for groupings and options</td>
+<td>Proposes clusters and next-class moves</td>
+</tr>
+<tr>
+<td>6. Decide</td>
+<td>Test the output, pick two or three moves</td>
+<td>Nothing</td>
+</tr>
+<tr>
+<td>7. Close the loop</td>
+<td>One slide, short response, one question back to students</td>
+<td>Nothing</td>
+</tr>
+<tr>
+<td>8. Record</td>
+<td>Save PDF, transcript, and chat in your own files</td>
+<td>Exports the thread on request</td>
+</tr>
+</tbody>
+</table></div>
+
+</div>
+</body>
+</html>
