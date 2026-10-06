@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LSU Law AI Sandbox</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  /* Same tokens as the session handouts so the series reads as one set of pages. */
+  :root {
+    --bg: #f6f7f5; --surface: #ffffff; --fg: #1d2630; --muted: #5a6670; --rule: #cfd6d3;
+    --accent: #2b5d6b; --accent-soft: #e4eef0;
+    --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --body: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141a1f; --surface: #1c242b; --fg: #e6eaec; --muted: #a2adb5; --rule: #34414a;
+      --accent: #7fb6c4; --accent-soft: #223038; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141a1f; --surface: #1c242b; --fg: #e6eaec; --muted: #a2adb5; --rule: #34414a;
+    --accent: #7fb6c4; --accent-soft: #223038; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 1.0625rem; line-height: 1.55; padding-inline: 16px; padding-block: 2.5rem 4rem; }
+  .page { max-width: 44rem; margin: 0 auto; }
+  h1, h2 { font-family: var(--display); text-wrap: balance; margin: 0; }
+  h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.15; margin-bottom: 0.5rem; }
+  .eyebrow { font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 0.6rem; }
+  .lede { color: var(--muted); font-size: 1.1rem; margin: 0 0 2.5rem; }
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* One card per session. Add new sessions at the top of the list. */
+  .sessions { list-style: none; margin: 0; padding: 0; }
+  .session { background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--accent); border-radius: 4px; padding: 1.1rem 1.25rem; margin-bottom: 1rem; }
+  .session time { display: block; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 0.25rem; }
+  .session h2 { font-size: 1.3rem; font-weight: 600; line-height: 1.25; margin-bottom: 0.35rem; }
+  .session h2 a { text-decoration: none; }
+  .session h2 a:hover { text-decoration: underline; }
+  .session p { margin: 0; color: var(--muted); }
+  .session .links { margin-top: 0.6rem; font-size: 0.95rem; }
+  .session .links a + a { margin-left: 1rem; }
+
+  .foot { margin-top: 3rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.88rem; }
+</style>
+</head>
+<body>
+<div class="page">
+  <p class="eyebrow">LSU Law · faculty series</p>
+  <h1>LSU Law AI Sandbox</h1>
+  <p class="lede">Handouts and materials from the informal faculty sessions on AI in teaching, scholarship and administrative work.</p>
+
+  <ul class="sessions">
+    <li class="session">
+      <time datetime="2026-10-05">October 5, 2026</time>
+      <h2><a href="2026-10-05-exit-tickets/">Exit Tickets in Law Teaching</a></h2>
+      <p>Why brief, ungraded end-of-class cards are worth three minutes a week, and a step-by-step recipe for reading a stack of them with help from an AI tool.</p>
+      <p class="links"><a href="2026-10-05-exit-tickets/">Read the handout</a></p>
+    </li>
+  </ul>
+
+  <p class="foot">Pages are added after each session.</p>
+</div>
+</body>
+</html>
